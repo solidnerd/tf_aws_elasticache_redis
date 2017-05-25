@@ -9,7 +9,6 @@ resource "aws_security_group" "redis_security_group" {
 }
 
 resource "aws_security_group_rule" "redis_ingress" {
-  count                    = "${length(var.allowed_security_groups)}"
   type                     = "ingress"
   from_port                = "${var.redis_port}"
   to_port                  = "${var.redis_port}"
